@@ -5,7 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 logger.add("selenium_bot.log",format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {function} | {message}",colorize=False,enqueue=True,mode="w")
 class BasePage(object) :
     def __init__(self,driver) : 
-        self.base_url = "https://www.tiktok.com/"
         self.driver   =  driver
         self.timeout  = 30
     def get_title(self) :
@@ -17,7 +16,6 @@ class BasePage(object) :
     def open_url(self, url):
         try : 
             logger.info(f' {url}')
-            url = self.base_url + url
             self.driver.get(url)
         except Exception as e :
             logger.error(f'error : {e}') 
