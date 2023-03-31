@@ -6,7 +6,6 @@ logger.add("selenium_bot.log",format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {fu
 class BasePage(object) :
     def __init__(self,driver) : 
         self.driver   =  driver
-        self.timeout  = 30
     def get_title(self) :
         try : 
             logger.info(f'{self.driver.title}')
